@@ -1,0 +1,12 @@
+{
+  "name": "@workspace/zod-validator",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts",
+    "./*": "./src/*.ts"
+  },
+  "dependencies": {
+    "zod": "^3.25.76"
+  }
+}

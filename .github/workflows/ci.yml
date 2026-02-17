@@ -1,0 +1,93 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  ci:
+    name: Type Check & Build
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    env:
+      DATABASE_URL: postgresql://postgres:mysecretpassword@localhost:5432/postgres # ggignore
+
+      BETTER_AUTH_SECRET: dummy_secret_for_ci # ggignore
+      BETTER_AUTH_URL: http://localhost:3000 # ggignore
+
+      GOOGLE_CLIENT_ID: dummy_client_id_for_ci # ggignore
+      GOOGLE_CLIENT_SECRET: dummy_client_secret_for_ci # ggignore
+      GITHUB_CLIENT_ID: dummy_client_id_for_ci # ggignore
+      GITHUB_CLIENT_SECRET: dummy_client_secret_for_ci # ggignore
+
+      OPENROUTER_API_KEY: dummy_api_key_for_ci # ggignore
+      MOONSHOT_API_KEY: dummy_api_key_for_ci # ggignore
+      GEMINI_API_KEY: dummy_api_key_for_ci # ggignore
+
+      EXA_API_KEY: dummy_api_key_for_ci # ggignore
+      FIRECRAWL_API_KEY: dummy_api_key_for_ci # ggignore
+      PARALLEL_API_KEY: dummy_api_key_for_ci # ggignore
+
+      DODO_PAYMENTS_API_KEY: dummy_api_key_for_ci # ggignore
+      DODO_PAYMENTS_WEBHOOK_SECRET: dummy_webhook_secret_for_ci # ggignore
+      DODO_PAYMENTS_PRO_PLAN_ID: dummy_plan_id_for_ci # ggignore
+
+      BLOB_READ_WRITE_TOKEN: dummy_token_for_ci # ggignore
+
+      NEXT_PUBLIC_APP_URL: http://localhost:3000 # ggignore
+
+      NEXT_PUBLIC_INTEGRATION_GOOGLE_CLIENT_ID: dummy_client_id_for_ci # ggignore
+      INTEGRATION_GOOGLE_CLIENT_SECRET: dummy_client_secret_for_ci # ggignore
+
+      NEXT_PUBLIC_INTEGRATION_GITHUB_CLIENT_ID: dummy_client_id_for_ci # ggignore
+      INTEGRATION_GITHUB_CLIENT_SECRET: dummy_client_secret_for_ci # ggignore
+
+    services:
+      postgres:
+        image: postgres:latest
+        env:
+          POSTGRES_PASSWORD: postgres # ggignore
+          POSTGRES_DB: test_db
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 10.4.1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Type Check
+        run: pnpm turbo run check-types
+
+      - name: Build
+        run: pnpm build
