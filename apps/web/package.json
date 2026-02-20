@@ -18,7 +18,7 @@
     "@workspace/dodopayments": "workspace:*",
     "@workspace/ui": "workspace:*",
     "dotenv": "^17.3.1",
-    "next": "^15.5.12",
+    "next": "^16.1.6",
     "react": "^19.2.4",
     "react-dom": "^19.2.4"
   },
