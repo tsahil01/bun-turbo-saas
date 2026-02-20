@@ -85,12 +85,17 @@ bunx shadcn@latest add button
 
 ## Environment Variables
 
-| Variable | Description |
-|----------|-------------|
-| `DATABASE_URL` | PostgreSQL connection |
-| `BETTER_AUTH_SECRET` | Auth secret |
-| `BETTER_AUTH_URL` | App base URL |
-| `GOOGLE_CLIENT_ID` | Google OAuth |
-| `GITHUB_CLIENT_ID` | GitHub OAuth |
-| `DODO_PAYMENTS_API_KEY` | Dodo Payments |
-| `NEXT_PUBLIC_APP_URL` | Public URL |
+Copy `.env.example` to `.env` and configure:
+
+| Variable | Description | Required |
+|----------|-------------|----------|
+| `DATABASE_URL` | PostgreSQL connection string | Yes |
+| `NEXT_PUBLIC_APP_URL` | Public app URL (e.g., http://localhost:3000) | Yes |
+| `BETTER_AUTH_SECRET` | Auth secret key (min 32 chars) | Yes |
+| `BETTER_AUTH_URL` | Auth base URL | Yes |
+| `GOOGLE_CLIENT_ID` | Google OAuth client ID | Optional |
+| `GOOGLE_CLIENT_SECRET` | Google OAuth client secret | Optional |
+| `GITHUB_CLIENT_ID` | GitHub OAuth client ID | Optional |
+| `GITHUB_CLIENT_SECRET` | GitHub OAuth client secret | Optional |
+| `DODO_PAYMENTS_API_KEY` | Dodo Payments API key | Optional |
+| `DODO_PAYMENTS_WEBHOOK_SECRET` | Dodo Payments webhook secret | Optional |
