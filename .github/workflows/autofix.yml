@@ -11,21 +11,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-      - uses: actions/setup-node@v6
+      - uses: oven-sh/setup-bun@v2
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 10.4.1
-
-      - run: pnpm install --frozen-lockfile
+      - run: bun install --frozen-lockfile
 
       - name: Format with Prettier
-        run: pnpm format
+        run: bun format
 
       - name: Lint & Fix
-        run: pnpm lint -- --fix
+        run: bun lint --fix
 
       - uses: autofix-ci/action@635ffb0c9798bd160680f18fd73371e355b85f27
-
-

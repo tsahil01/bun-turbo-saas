@@ -72,22 +72,12 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 10.4.1
+      - uses: oven-sh/setup-bun@v2
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-          cache: "pnpm"
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+      - run: bun install --frozen-lockfile
 
       - name: Type Check
-        run: pnpm turbo run check-types
+        run: bun turbo run check-types
 
       - name: Build
-        run: pnpm build
+        run: bun build
