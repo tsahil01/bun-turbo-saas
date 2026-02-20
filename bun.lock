@@ -62,7 +62,7 @@
       "version": "0.0.0",
       "dependencies": {
         "@prisma/client": "^7.4.0",
-        "@prisma/client-runtime-utils": "^7.4.0",
+        "@prisma/client-runtime-utils": "^7.4.1",
         "@prisma/extension-accelerate": "^3.0.1",
         "dotenv": "^17.3.1",
       },
@@ -363,7 +363,7 @@
 
     "@prisma/client": ["@prisma/client@7.4.0", "", { "dependencies": { "@prisma/client-runtime-utils": "7.4.0" }, "peerDependencies": { "prisma": "*", "typescript": ">=5.4.0" }, "optionalPeers": ["prisma", "typescript"] }, "sha512-Sc+ncr7+ph1hMf1LQfn6UyEXDEamCd5pXMsx8Q3SBH0NGX+zjqs3eaABt9hXwbcK9l7f8UyK8ldxOWA2LyPynQ=="],
 
-    "@prisma/client-runtime-utils": ["@prisma/client-runtime-utils@7.4.0", "", {}, "sha512-jTmWAOBGBSCT8n7SMbpjCpHjELgcDW9GNP/CeK6CeqjUFlEL6dn8Cl81t/NBDjJdXDm85XDJmc+PEQqqQee3xw=="],
+    "@prisma/client-runtime-utils": ["@prisma/client-runtime-utils@7.4.1", "", {}, "sha512-8fy74OMYC7mt9cJ2MncIDk1awPRgmtXVvwTN2FlW4JVhbck8Dgt0wTkhPG85myfj4ZeP2stjF9Sdg12n5HrpQg=="],
 
     "@prisma/config": ["@prisma/config@7.4.0", "", { "dependencies": { "c12": "3.1.0", "deepmerge-ts": "7.1.5", "effect": "3.18.4", "empathic": "2.0.0" } }, "sha512-EnNrZMwZ9+O6UlG+YO9SP3VhVw4zwMahDRzQm3r0DQn9KeU5NwzmaDAY+BzACrgmaU71Id1/0FtWIDdl7xQp9g=="],
 
@@ -1424,6 +1424,8 @@
     "@eslint/eslintrc/globals": ["globals@14.0.0", "", {}, "sha512-oahGvuMGQlPw/ivIYBjVSrWAfWLBeku5tpPE2fOPLi+WHffIWbuh2tCjhyQhTBPMf5E9jDEH4FOmTYgYwbKwtQ=="],
 
     "@eslint/eslintrc/ignore": ["ignore@5.3.2", "", {}, "sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g=="],
+
+    "@prisma/client/@prisma/client-runtime-utils": ["@prisma/client-runtime-utils@7.4.0", "", {}, "sha512-jTmWAOBGBSCT8n7SMbpjCpHjELgcDW9GNP/CeK6CeqjUFlEL6dn8Cl81t/NBDjJdXDm85XDJmc+PEQqqQee3xw=="],
 
     "@prisma/engines/@prisma/get-platform": ["@prisma/get-platform@7.4.0", "", { "dependencies": { "@prisma/debug": "7.4.0" } }, "sha512-fOUIoGzAPgtjHVs4DsVSnEDPBEauAmFeZr4Ej3tMwxywam7hHdRtCzgKagQBKcYIJuya8gzYrTqUoukzXtWJaA=="],
 
