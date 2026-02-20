@@ -1,4 +1,4 @@
-# template-turbo
+# bun-turbo-saas
 
 Turborepo monorepo template using Bun, Next.js 15, shadcn/ui, Tailwind CSS v4, Prisma + PostgreSQL, better-auth, and Dodo Payments.
 
@@ -132,7 +132,7 @@ devDependencies: `@workspace/eslint-config`, `@workspace/typescript-config`, `es
 
 ## Root Configuration
 
-- `package.json` — Name: `template-turbo`. Workspaces: `apps/*`, `packages/*`. Scripts: `build`, `dev`, `lint`, `format`, `format:check`, `db:generate`, `db:migrate`, `db:studio`. Engine: Node >= 20.
+- `package.json` — Name: `bun-turbo-saas`. Workspaces: `apps/*`, `packages/*`. Scripts: `build`, `dev`, `lint`, `format`, `format:check`, `db:generate`, `db:migrate`, `db:studio`. Engine: Node >= 20.
 - `turbo.json` — Build depends on `^build` + `db:generate`. Caches `.next/**`. Env-aware for: `DATABASE_URL`, `BETTER_AUTH_SECRET`, `BETTER_AUTH_URL`, `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `GITHUB_CLIENT_ID`, `GITHUB_CLIENT_SECRET`, `DODO_PAYMENTS_API_KEY`, `DODO_PAYMENTS_WEBHOOK_SECRET`, `NEXT_PUBLIC_APP_URL`.
 - `tsconfig.json` — Extends `@workspace/typescript-config/base.json`.
 - `.eslintrc.js` — Root-only config extending `@workspace/eslint-config/library.js`.
