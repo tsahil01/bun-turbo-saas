@@ -16,7 +16,7 @@ jobs:
       - run: bun install --frozen-lockfile
 
       - name: Format with Prettier
-        run: bun format
+        run: bun run format
 
       - name: Lint & Fix
         run: bun lint:fix
