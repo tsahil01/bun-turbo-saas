@@ -19,6 +19,6 @@ jobs:
         run: bun run format
 
       - name: Lint & Fix
-        run: bun lint:fix
+        run: bun run lint:fix
 
       - uses: autofix-ci/action@635ffb0c9798bd160680f18fd73371e355b85f27
